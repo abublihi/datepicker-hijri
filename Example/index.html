@@ -1,0 +1,35 @@
+<!doctype html>
+<html dir="rtl" lang="ar">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
+  <title>تجربة محدد التاريخ الهجري</title>
+  <link href="https://fonts.googleapis.com/css?family=Tajawal&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" rel="stylesheet">
+</head>
+<style>
+    body {
+      font-family: 'Tajawal', serif;
+    }
+    .center {
+      padding: 10% 0;
+    }
+    input {
+      border-radius: 4px;
+    }
+</style>
+<body style="text-align: center; height: 100hv;">
+  <div class="center">
+    <h2>تجربة محدد التاريخ الهجري</h2>
+    <input type="text" id="calender" value="1441/02/01">
+    <button id="calender2" onloadeddata="console.log(this)">حدد التاريخ :</button>
+    <datepicker-hijri reference="calender" placement="bottom" selected-date="1441/02/01"></datepicker-hijri>
+    <datepicker-hijri reference="calender2" placement="bottom" selected-date="1441/02/01"></datepicker-hijri>
+
+    <!-- Scripts -->
+    <script src="../build/datepicker-hijri.js"></script>
+
+  </div>
+</body>
+
+</html>
