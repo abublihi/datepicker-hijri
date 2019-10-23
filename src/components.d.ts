@@ -23,7 +23,6 @@ export namespace Components {
   }
   interface DatepickerHijri {
     'langCode': string;
-    'onDateChange': any;
     'placement': Placement;
     'reference': string;
     'selectedDate': string;
@@ -39,27 +38,6 @@ export namespace Components {
     'dateFormat': any;
     'selectedDate': any;
     'setSelectedDate': any;
-  }
-  interface MyComponent {
-    /**
-    * The first name
-    */
-    'first': string;
-    /**
-    * The last name
-    */
-    'last': string;
-    /**
-    * The middle name
-    */
-    'middle': string;
-  }
-  interface ProperComponent {
-    'langCode': string;
-    'onDateChange': any;
-    'placement': Placement;
-    'reference': string;
-    'selectedDate': string;
   }
 }
 
@@ -89,25 +67,11 @@ declare global {
     prototype: HTMLMonthDaysElement;
     new (): HTMLMonthDaysElement;
   };
-
-  interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {}
-  const HTMLMyComponentElement: {
-    prototype: HTMLMyComponentElement;
-    new (): HTMLMyComponentElement;
-  };
-
-  interface HTMLProperComponentElement extends Components.ProperComponent, HTMLStencilElement {}
-  const HTMLProperComponentElement: {
-    prototype: HTMLProperComponentElement;
-    new (): HTMLProperComponentElement;
-  };
   interface HTMLElementTagNameMap {
     'date-calender': HTMLDateCalenderElement;
     'datepicker-hijri': HTMLDatepickerHijriElement;
     'day-names': HTMLDayNamesElement;
     'month-days': HTMLMonthDaysElement;
-    'my-component': HTMLMyComponentElement;
-    'proper-component': HTMLProperComponentElement;
   }
 }
 
@@ -123,7 +87,6 @@ declare namespace LocalJSX {
   }
   interface DatepickerHijri {
     'langCode'?: string;
-    'onDateChange'?: any;
     'placement'?: Placement;
     'reference'?: string;
     'selectedDate'?: string;
@@ -140,35 +103,12 @@ declare namespace LocalJSX {
     'selectedDate'?: any;
     'setSelectedDate'?: any;
   }
-  interface MyComponent {
-    /**
-    * The first name
-    */
-    'first'?: string;
-    /**
-    * The last name
-    */
-    'last'?: string;
-    /**
-    * The middle name
-    */
-    'middle'?: string;
-  }
-  interface ProperComponent {
-    'langCode'?: string;
-    'onDateChange'?: any;
-    'placement'?: Placement;
-    'reference'?: string;
-    'selectedDate'?: string;
-  }
 
   interface IntrinsicElements {
     'date-calender': DateCalender;
     'datepicker-hijri': DatepickerHijri;
     'day-names': DayNames;
     'month-days': MonthDays;
-    'my-component': MyComponent;
-    'proper-component': ProperComponent;
   }
 }
 
@@ -182,8 +122,6 @@ declare module "@stencil/core" {
       'datepicker-hijri': LocalJSX.DatepickerHijri & JSXBase.HTMLAttributes<HTMLDatepickerHijriElement>;
       'day-names': LocalJSX.DayNames & JSXBase.HTMLAttributes<HTMLDayNamesElement>;
       'month-days': LocalJSX.MonthDays & JSXBase.HTMLAttributes<HTMLMonthDaysElement>;
-      'my-component': LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
-      'proper-component': LocalJSX.ProperComponent & JSXBase.HTMLAttributes<HTMLProperComponentElement>;
     }
   }
 }
