@@ -1,0 +1,45 @@
+.date-calender {
+  width: 266px;
+  direction: rtl;
+  background: #ffffff;
+  padding: 15px;
+  border: 1px solid #ddd;
+  margin-top: 2px;
+  font-family: serif;
+  box-sizing: unset;
+  -webkit-box-sizing: unset;
+  font-size: 14px;
+  border-radius: 4px;
+  z-index: 1000;
+  color: black !important;
+}
+
+.date-calender-controls {
+  direction: rtl;
+  text-align: center;
+}
+
+.control-button {
+  position: absolute;
+  border: 0px;
+  font-weight: bold;
+  font-size: 15px;
+  cursor: pointer;
+  background-color: #fff;
+}
+
+.control-button:hover {
+  color: #888888
+}
+
+.control-button:focus {
+  outline: unset
+}
+
+.previous-button {
+  right: 15px;
+}
+
+.next-button {
+  left: 15px;
+}

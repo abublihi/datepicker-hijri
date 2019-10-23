@@ -1,0 +1,43 @@
+.month-days {
+  text-align: right;
+  display: flex;
+  flex-flow: wrap;
+}
+
+.month-day {
+  margin: 2px;
+  width: 30px;
+  padding: 1px;
+  border: 1px solid #fff;
+  text-align: center;
+  -webkit-box-sizing: unset !important;
+  box-sizing: unset;
+  border-radius: 4px;
+}
+
+.month-day:hover {
+  border: 1px solid black
+}
+
+.no-hover:hover {
+  border: 1px solid white !important;
+}
+
+.month-day-button {
+  cursor: pointer;
+  border: 0px;
+  width: 30px;
+  padding: 5px;
+  font-size: 14px;
+  border-radius: 4px;
+  /* background-color: white; */
+}
+
+.month-day-button.selected {
+  background-color: black !important;
+  color: white !important;
+}
+
+.month-day-button:focus {
+  outline: unset;
+}

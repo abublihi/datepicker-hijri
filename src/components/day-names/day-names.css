@@ -1,0 +1,16 @@
+.day-names-container {
+  text-align: right;
+  border-bottom: 1px solid #ddd;
+}
+
+.day-name {
+  display: inline-block;
+  margin: 2px;
+  width: 30px;
+  height: 25px;
+  padding: 1px;
+  border: 1px solid #fff;
+  text-align: center;
+  -webkit-box-sizing: unset !important;
+  box-sizing: unset;
+}
