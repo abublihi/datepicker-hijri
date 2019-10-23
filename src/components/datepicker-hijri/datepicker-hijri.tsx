@@ -13,12 +13,11 @@ export class DatepickerHijri {
   @Prop() reference: string;
   @Prop({reflect: true}) selectedDate: string;
   @Prop({reflect: true}) langCode: string = 'ar';
-  @Prop() onDateChange;
 
   @State() displayCalender: boolean = false;
   @State() calenderContainerId: string;
 
-  handleOnfocus(e)
+  handleOnfocus()
   {
     this.displayCalender = true;
   }
@@ -57,8 +56,8 @@ export class DatepickerHijri {
   componentDidLoad(){
 
     var reference = document.querySelector('#'+this.reference);
-    reference.addEventListener('focus', (e) => this.handleOnfocus(e))
-    reference.addEventListener('click', (e) => this.handleOnfocus(e))
+    reference.addEventListener('focus', () => this.handleOnfocus())
+    reference.addEventListener('click', () => this.handleOnfocus())
     var popper = document.getElementById(this.calenderContainerId);
     new Popper(reference, popper, {
       placement: this.placement
