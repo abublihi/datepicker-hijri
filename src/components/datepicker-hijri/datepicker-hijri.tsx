@@ -13,6 +13,7 @@ export class DatepickerHijri {
   @Prop() reference: string;
   @Prop({reflect: true}) selectedDate: string;
   @Prop({reflect: true}) langCode: string = 'ar';
+  @Prop({reflect: true}) dateFormat: string = 'iYYYY/iMM/iDD';
 
   @State() displayCalender: boolean = false;
   @State() calenderContainerId: string;
@@ -68,7 +69,7 @@ export class DatepickerHijri {
   render() {
     return <div id={this.calenderContainerId}>
         { this.displayCalender
-          && <date-calender langCode={this.langCode} selectedDate={this.selectedDate} setParentSelectedDate={this.setSelectedDate}></date-calender>
+          && <date-calender langCode={this.langCode} dateFormat={this.dateFormat} selectedDate={this.selectedDate} setParentSelectedDate={this.setSelectedDate}></date-calender>
         }
     </div>
   }

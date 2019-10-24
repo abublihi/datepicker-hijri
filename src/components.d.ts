@@ -22,6 +22,7 @@ export namespace Components {
     'setParentSelectedDate': any;
   }
   interface DatepickerHijri {
+    'dateFormat': string;
     'langCode': string;
     'placement': Placement;
     'reference': string;
@@ -86,6 +87,7 @@ declare namespace LocalJSX {
     'setParentSelectedDate'?: any;
   }
   interface DatepickerHijri {
+    'dateFormat'?: string;
     'langCode'?: string;
     'placement'?: Placement;
     'reference'?: string;

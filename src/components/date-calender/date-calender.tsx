@@ -15,9 +15,9 @@ export class DateCalender {
   /**
    * The language code
    */
-  @Prop() langCode: string = 'ar';
+  @Prop({reflect: true}) langCode: string = 'ar';
   @Prop({reflect: true}) selectedDate: string = '';
-  @Prop() dateFormat: string = 'iYYYY/iMM/iDD';
+  @Prop({reflect: true}) dateFormat: string = 'iYYYY/iMM/iDD';
   @Prop() setParentSelectedDate;
 
   @State() currentTime = moment(this.selectedDate, this.dateFormat);
