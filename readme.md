@@ -7,7 +7,7 @@
 ## Stand alone: 
 
 1. Download all files in the `build` directory
-2. Include the script like in the code below
+2. Include the script `datepicker-hijri.js` file like in the code below
 
 ```html
 <script src="build/datepicker-hijri.js"></script>
@@ -15,14 +15,30 @@
 
 # Usage
 
-## Properties:
-| name          | required | description |
-|---------------|----------|---------|
-| reference     |    yes   | an identifier for the  element where the datepicker will appear it must be an id for an html element |
-| placement     |    no    | the placement of the the datepicker 'bottom', 'top', 'right', 'left' and 'auto' `default` auto |
-| selected-date |    no    | the selected date it must be string |
-| selected-date |    no    | the selected date it must be string |
+## Attributes:
+|      name       | required | description |
+|-----------------|----------|-------------|
+| reference       |    yes   | an identifier for the  element where the datepicker will appear it must be an id for an html element |
+| placement       |    no    | the placement of the the datepicker 'bottom', 'top', 'right', 'left' and 'auto' `default:` bottom, you can use any placement in [popper.js](https://popper.js.org/popper-documentation.html#Popper.placements) |
+| date-format     |    no    | the date format, it is string, `default:` iYYYY/iMM/iDD, any format in [moment-hijri](https://github.com/xsoh/moment-hijri) will work|
+| selected-date   |    no    | the selected date it is string with the same format of `date-format` prop |
+
+
+## Example
+
+In the Example below the `input` with id calender is the reference for the datepicker-hijri web component, so if you click or focus on the input the datepicker will be shown.
 
 ```html
-<datepicker-hijri reference="calender" placement="bottom" selected-date="1441/02/01"></datepicker-hijri>
+<input type="text" id="calender">
+<datepicker-hijri reference="calender" placement="bottom" date-format="iYYYY/iMM/iDD" selected-date="1441/02/01"></datepicker-hijri>
 ```
+
+## how it works 
+
+So the datepicker shown and every thing is good, but what is happening, the when the user clicks on the day the datepicker will modify the attribute `value` on the reference with the new value.
+
+
+# Credits
+
+- [@xsoh](https://github.com/xsoh/moment-hijri) Thank for the awesome package moment-hijir.
+- [@FezVrasta](https://github.com/FezVrasta/popper.js) Thank you for the package popper.js.
