@@ -6,6 +6,13 @@
 
 ## Stand alone: 
 
+* Use CDN
+
+```html 
+<script src="https://cdn.jsdelivr.net/gh/abublihi/datepicker-hijri@master/build/datepicker-hijri.js"></script>
+```
+* Download files
+
 1. Download all files in the `build` directory
 2. Include the script `datepicker-hijri.js` file like in the code below
 
