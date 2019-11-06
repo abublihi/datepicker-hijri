@@ -40,6 +40,10 @@ In the Example below the `input` with id calender is the reference for the datep
 <datepicker-hijri reference="calender" placement="bottom" date-format="iYYYY/iMM/iDD" selected-date="1441/02/01"></datepicker-hijri>
 ```
 
+## Demo 
+[Codepen Hijridate picker](https://codepen.io/abublihi/pen/RwwMJwz)
+
+![Demo Image](https://i.ibb.co/tKkWFSp/ezgif-com-video-to-gif.gif)
 ## how it works 
 
 So the datepicker shown and every thing is good, but what is happening, the when the user clicks on the day the datepicker will modify the attribute `value` on the reference with the new value.
