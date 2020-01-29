@@ -24,6 +24,7 @@ export namespace Components {
   interface DatepickerHijri {
     'dateFormat': string;
     'langCode': string;
+    'onDateSelectClose': boolean;
     'placement': Placement;
     'reference': string;
     'selectedDate': string;
@@ -89,6 +90,7 @@ declare namespace LocalJSX {
   interface DatepickerHijri {
     'dateFormat'?: string;
     'langCode'?: string;
+    'onDateSelectClose'?: boolean;
     'placement'?: Placement;
     'reference'?: string;
     'selectedDate'?: string;

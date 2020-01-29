@@ -29,6 +29,7 @@
 | placement       |    no    | the placement of the the datepicker 'bottom', 'top', 'right', 'left' and 'auto' `default:` bottom, you can use any placement in [popper.js](https://popper.js.org/popper-documentation.html#Popper.placements) |
 | date-format     |    no    | the date format, it is string, `default:` iYYYY/iMM/iDD, any format in [moment-hijri](https://github.com/xsoh/moment-hijri) will work|
 | selected-date   |    no    | the selected date it is string with the same format of `date-format` prop |
+| on-date-select-close   |    no    | if you want the datepicker to disapeare on chosing the date only add `on-date-select-close` |
 
 
 ## Example

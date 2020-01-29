@@ -14,6 +14,7 @@ export class DatepickerHijri {
   @Prop({reflect: true}) selectedDate: string;
   @Prop({reflect: true}) langCode: string = 'ar';
   @Prop({reflect: true}) dateFormat: string = 'iYYYY/iMM/iDD';
+  @Prop() onDateSelectClose: boolean = false;
 
   @State() displayCalender: boolean = false;
   @State() calenderContainerId: string;
@@ -48,6 +49,9 @@ export class DatepickerHijri {
 
     var reference = document.querySelector('#'+this.reference);
     reference.setAttribute('value', this.selectedDate);
+
+    if (this.onDateSelectClose)
+      this.displayCalender = false;
   }
 
   componentWillLoad() {
