@@ -7,12 +7,14 @@
 
 ## Properties
 
-| Property       | Attribute       | Description | Type                                                                                                                                                                                                         | Default     |
-| -------------- | --------------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------- |
-| `langCode`     | `lang-code`     |             | `string`                                                                                                                                                                                                     | `'ar'`      |
-| `placement`    | `placement`     |             | `"auto" \| "auto-end" \| "auto-start" \| "bottom" \| "bottom-end" \| "bottom-start" \| "left" \| "left-end" \| "left-start" \| "right" \| "right-end" \| "right-start" \| "top" \| "top-end" \| "top-start"` | `'bottom'`  |
-| `reference`    | `reference`     |             | `string`                                                                                                                                                                                                     | `undefined` |
-| `selectedDate` | `selected-date` |             | `string`                                                                                                                                                                                                     | `undefined` |
+| Property            | Attribute              | Description | Type                                                                                                                                                                                                         | Default           |
+| ------------------- | ---------------------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------- |
+| `dateFormat`        | `date-format`          |             | `string`                                                                                                                                                                                                     | `'iYYYY/iMM/iDD'` |
+| `langCode`          | `lang-code`            |             | `string`                                                                                                                                                                                                     | `'ar'`            |
+| `onDateSelectClose` | `on-date-select-close` |             | `boolean`                                                                                                                                                                                                    | `false`           |
+| `placement`         | `placement`            |             | `"auto" \| "auto-end" \| "auto-start" \| "bottom" \| "bottom-end" \| "bottom-start" \| "left" \| "left-end" \| "left-start" \| "right" \| "right-end" \| "right-start" \| "top" \| "top-end" \| "top-start"` | `'bottom'`        |
+| `reference`         | `reference`            |             | `string`                                                                                                                                                                                                     | `undefined`       |
+| `selectedDate`      | `selected-date`        |             | `string`                                                                                                                                                                                                     | `undefined`       |
 
 
 ## Dependencies
