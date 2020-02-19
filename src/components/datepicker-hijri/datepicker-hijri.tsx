@@ -1,6 +1,7 @@
 import { Component, Listen, h, State, Prop } from '@stencil/core';
 import Popper from 'popper.js';
 import {Placement} from 'popper.js';import uuid from 'uuid';
+import moment from 'moment-hijri';
 
 @Component({
   tag: 'datepicker-hijri',
@@ -10,7 +11,7 @@ export class DatepickerHijri {
 
   @Prop() placement: Placement = 'bottom';
   @Prop() reference: string;
-  @Prop({reflect: true}) selectedDate: string;
+  @Prop({reflect: true}) selectedDate: string = '';
   @Prop({reflect: true}) langCode: string = 'ar';
   @Prop({reflect: true}) dateFormat: string = 'iYYYY/iMM/iDD';
   @Prop() onDateSelectClose: boolean = false;
@@ -55,6 +56,20 @@ export class DatepickerHijri {
 
   componentWillLoad() {
     this.calenderContainerId = uuid('datepicker-hijri')
+
+    // This will fix the datepicker when the selected date is null or empty
+    if (!moment(this.selectedDate)._isValid){
+      var selectedDate;
+
+      if (!moment(document.querySelector('#'+this.reference).getAttribute('value'))._isValid){
+        selectedDate = moment().format(this.dateFormat);
+      } else {
+        selectedDate = document.querySelector('#'+this.reference).getAttribute('value');
+      }
+
+      this.selectedDate = selectedDate;
+      this.setSelectedDate(this.selectedDate)
+    }
   }
 
   componentDidLoad(){
@@ -66,7 +81,7 @@ export class DatepickerHijri {
     new Popper(reference, popperEl, {
       placement: this.placement
     });
-    // this.displayCalender = false;
+
   }
 
   render() {
