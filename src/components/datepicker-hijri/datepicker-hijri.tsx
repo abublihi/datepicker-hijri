@@ -1,7 +1,6 @@
 import { Component, Listen, h, State, Prop } from '@stencil/core';
 import Popper from 'popper.js';
-import {Placement} from 'popper.js';
-import uuid from 'uuid';
+import {Placement} from 'popper.js';import uuid from 'uuid';
 
 @Component({
   tag: 'datepicker-hijri',
@@ -63,19 +62,17 @@ export class DatepickerHijri {
     var reference = document.querySelector('#'+this.reference);
     reference.addEventListener('focus', () => this.handleOnfocus())
     reference.addEventListener('click', () => this.handleOnfocus())
-    var popper = document.getElementById(this.calenderContainerId);
-    new Popper(reference, popper, {
+    var popperEl = document.getElementById(this.calenderContainerId);
+    new Popper(reference, popperEl, {
       placement: this.placement
     });
-
+    // this.displayCalender = false;
   }
 
   render() {
-    return <div id={this.calenderContainerId}>
-        { this.displayCalender
-          && <date-calender langCode={this.langCode} dateFormat={this.dateFormat} selectedDate={this.selectedDate} setParentSelectedDate={this.setSelectedDate}></date-calender>
-        }
-    </div>
+    return <div id={this.calenderContainerId} style={{ 'visibility': this.displayCalender ? 'visible' : 'hidden', 'z-index': '99999', 'margin': '5px'}}>
+            <date-calender langCode={this.langCode} dateFormat={this.dateFormat} selectedDate={this.selectedDate} setParentSelectedDate={this.setSelectedDate}></date-calender>
+      </div>
   }
 }
 

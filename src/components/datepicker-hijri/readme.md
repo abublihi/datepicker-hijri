@@ -27,6 +27,8 @@
 ```mermaid
 graph TD;
   datepicker-hijri --> date-calender
+  date-calender --> years-list
+  date-calender --> months-list
   date-calender --> day-names
   date-calender --> month-days
   style datepicker-hijri fill:#f9f,stroke:#333,stroke-width:4px

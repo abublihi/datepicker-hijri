@@ -23,12 +23,16 @@
 
 ### Depends on
 
+- [years-list](../years-list)
+- [months-list](../months-list)
 - [day-names](../day-names)
 - [month-days](../month-days)
 
 ### Graph
 ```mermaid
 graph TD;
+  date-calender --> years-list
+  date-calender --> months-list
   date-calender --> day-names
   date-calender --> month-days
   datepicker-hijri --> date-calender

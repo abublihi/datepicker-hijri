@@ -51,6 +51,19 @@ export class DateCalender {
     return this.currentTime.format('iMMMM') + ' ('+this.currentTime.format('iMM')+') ' + this.currentTime.format('iYYYY');
   }
 
+  handleYearChange = (event) => {
+    let time = this.currentTime
+    time.iYear(parseInt(event.target.value, 10))
+    const selectedDate = time.format(this.dateFormat);
+    this.selectedDate = selectedDate;
+  }
+
+  handleMonthChange = (event) => {
+    let time = this.currentTime
+    time.iMonth(parseInt(event.target.value, 10))
+    const selectedDate = time.format(this.dateFormat);
+    this.selectedDate = selectedDate;
+  }
 
   render() {
     return <div class='date-calender'>
@@ -58,13 +71,11 @@ export class DateCalender {
       <button class='control-button previous-button' onClick={this.subtractMonth} type="button">{'<'}</button>
       <strong class='month-name'>{this.getMonthName()}</strong>
       <button class='control-button next-button' onClick={this.addMonth} type="button" > {'>'} </button>
-      {/* {this.props.quickSelect &&
-        <YearAndMonthList>
-          <YearsList currentTime={this.state.currentTime} onChange={this.handelYearChange}/>
-          <MonthList currentTime={this.state.currentTime} onChange={this.handelMonthChange}/>
-        </YearAndMonthList>
-      } */}
+      <div>
+        <years-list currentTime={this.currentTime} handleYearChange={this.handleYearChange}></years-list>
+        <months-list currentTime={this.currentTime} handleMonthChange={this.handleMonthChange}></months-list>
 
+      </div>
     </div>
     <day-names langCode={this.langCode}></day-names>
     <month-days currentTime={this.currentTime} dateFormat={this.dateFormat} selectedDate={this.selectedDate} setSelectedDate={this.setSelectedDate}></month-days>
