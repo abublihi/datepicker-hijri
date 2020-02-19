@@ -41,6 +41,14 @@ export namespace Components {
     'selectedDate': any;
     'setSelectedDate': any;
   }
+  interface MonthsList {
+    'currentTime': any;
+    'handleMonthChange': any;
+  }
+  interface YearsList {
+    'currentTime': any;
+    'handleYearChange': any;
+  }
 }
 
 declare global {
@@ -69,11 +77,25 @@ declare global {
     prototype: HTMLMonthDaysElement;
     new (): HTMLMonthDaysElement;
   };
+
+  interface HTMLMonthsListElement extends Components.MonthsList, HTMLStencilElement {}
+  const HTMLMonthsListElement: {
+    prototype: HTMLMonthsListElement;
+    new (): HTMLMonthsListElement;
+  };
+
+  interface HTMLYearsListElement extends Components.YearsList, HTMLStencilElement {}
+  const HTMLYearsListElement: {
+    prototype: HTMLYearsListElement;
+    new (): HTMLYearsListElement;
+  };
   interface HTMLElementTagNameMap {
     'date-calender': HTMLDateCalenderElement;
     'datepicker-hijri': HTMLDatepickerHijriElement;
     'day-names': HTMLDayNamesElement;
     'month-days': HTMLMonthDaysElement;
+    'months-list': HTMLMonthsListElement;
+    'years-list': HTMLYearsListElement;
   }
 }
 
@@ -107,12 +129,22 @@ declare namespace LocalJSX {
     'selectedDate'?: any;
     'setSelectedDate'?: any;
   }
+  interface MonthsList {
+    'currentTime'?: any;
+    'handleMonthChange'?: any;
+  }
+  interface YearsList {
+    'currentTime'?: any;
+    'handleYearChange'?: any;
+  }
 
   interface IntrinsicElements {
     'date-calender': DateCalender;
     'datepicker-hijri': DatepickerHijri;
     'day-names': DayNames;
     'month-days': MonthDays;
+    'months-list': MonthsList;
+    'years-list': YearsList;
   }
 }
 
@@ -126,6 +158,8 @@ declare module "@stencil/core" {
       'datepicker-hijri': LocalJSX.DatepickerHijri & JSXBase.HTMLAttributes<HTMLDatepickerHijriElement>;
       'day-names': LocalJSX.DayNames & JSXBase.HTMLAttributes<HTMLDayNamesElement>;
       'month-days': LocalJSX.MonthDays & JSXBase.HTMLAttributes<HTMLMonthDaysElement>;
+      'months-list': LocalJSX.MonthsList & JSXBase.HTMLAttributes<HTMLMonthsListElement>;
+      'years-list': LocalJSX.YearsList & JSXBase.HTMLAttributes<HTMLYearsListElement>;
     }
   }
 }
