@@ -44,12 +44,14 @@ export class DatepickerHijri {
     return this.hasSomeParentId(element.parentNode, idName);
   }
 
-  setSelectedDate = (selectedDate) => {
+  setSelectedDate = (selectedDate, triggerEvent = true) => {
     this.selectedDate = selectedDate;
 
     var reference = document.querySelector('#'+this.reference);
     reference.setAttribute('value', this.selectedDate);
     (reference as HTMLInputElement).value = this.selectedDate;
+    if (triggerEvent)
+      reference.dispatchEvent(new Event('change'));
 
     if (this.onDateSelectClose)
       this.displayCalender = false;
@@ -59,17 +61,17 @@ export class DatepickerHijri {
     this.calenderContainerId = uuid('datepicker-hijri')
 
     // This will fix the datepicker when the selected date is null or empty
-    if (!moment(this.selectedDate)._isValid){
+    if (!moment(this.selectedDate, this.dateFormat)._isValid){
       var selectedDate;
 
-      if (!moment(document.querySelector('#'+this.reference).getAttribute('value'))._isValid){
+      if (!moment(document.querySelector('#'+this.reference).getAttribute('value'), this.dateFormat)._isValid){
         selectedDate = moment().format(this.dateFormat);
       } else {
         selectedDate = document.querySelector('#'+this.reference).getAttribute('value');
       }
 
       this.selectedDate = selectedDate;
-      this.setSelectedDate(this.selectedDate)
+      this.setSelectedDate(this.selectedDate, false)
     }
   }
 
