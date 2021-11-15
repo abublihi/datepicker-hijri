@@ -43,7 +43,7 @@ In the Example below the `input` with id calender is the reference for the datep
 
 ## Event `onchange`
 
-in any change on the date, will be fireing a `change` event. so you can listen and respond to the change.
+in any change on the date, will be firing a `change` event. so you can listen and respond to the change.
 
 ```html
 <input type="text" id="calender" onchange="console.log('changed')">
