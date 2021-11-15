@@ -41,10 +41,20 @@ In the Example below the `input` with id calender is the reference for the datep
 <datepicker-hijri reference="calender" placement="bottom" date-format="iYYYY/iMM/iDD" selected-date="1441/02/01"></datepicker-hijri>
 ```
 
+## Event `onchange`
+
+in any change on the date, will be fireing a `change` event. so you can listen and respond to the change.
+
+```html
+<input type="text" id="calender" onchange="console.log('changed')">
+                                <!-- ^^^^^^^^ -->
+<datepicker-hijri reference="calender" placement="bottom" date-format="iYYYY/iMM/iDD" selected-date="1441/02/01"></datepicker-hijri>
+```
 ## Demo 
 [Codepen Hijridate picker](https://codepen.io/abublihi/pen/RwwMJwz)
 
 ![Demo Image](https://i.ibb.co/SmZwqfH/hijri-datepicker-1.gif)
+
 ## how it works 
 
 So the datepicker shown and every thing is good, but what is happening, when the user chooses the day, the datepicker will modify the attribute `value` on the reference with the new value.
