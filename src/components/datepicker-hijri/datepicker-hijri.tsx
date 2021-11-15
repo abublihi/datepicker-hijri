@@ -49,6 +49,7 @@ export class DatepickerHijri {
 
     var reference = document.querySelector('#'+this.reference);
     reference.setAttribute('value', this.selectedDate);
+    (reference as HTMLInputElement).value = this.selectedDate;
 
     if (this.onDateSelectClose)
       this.displayCalender = false;
