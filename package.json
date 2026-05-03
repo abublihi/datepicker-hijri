@@ -29,6 +29,6 @@
     "@popperjs/core": "^2.0.6",
     "moment-hijri": "^2.1.2",
     "popper.js": "^1.16.0",
-    "uuid": "^3.3.3"
+    "uuid": "^14.0.0"
   }
 }
